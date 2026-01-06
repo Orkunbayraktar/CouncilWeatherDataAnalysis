@@ -1,77 +1,113 @@
-Council-
-Weather Data Analysis with Web Scraping
-📌 Project Overview
-This project is a Python-based application that collects weather data using web scraping, cleans and processes real-world data, performs statistical analysis, detects anomalous temperature values, classifies daily weather conditions, and visualizes the results.
+# 📊 Council Weather Data Analysis
 
-The main goal of the project is to demonstrate the use of Python fundamentals together with data analysis and visualization techniques.
+A Python-based weather data analysis application that uses **web scraping**, **data cleaning**, **statistical analysis**, **anomaly detection**, and **visualization** to explore real-world weather trends and conditions. :contentReference[oaicite:0]{index=0}
 
-🛠 Technologies Used
-Python 3
-Requests & BeautifulSoup (Web Scraping)
-Pandas (Data Cleaning and Analysis)
-Matplotlib & Seaborn (Data Visualization)
-🌐 Data Collection
-Weather data is collected from a public website using HTTP requests and HTML parsing.
-The raw data may include:
+---
 
-missing temperature values
-non-numeric entries
-inconsistent date formats
-These issues are handled during the data cleaning phase.
+## 🚀 Overview
 
-🧹 Data Cleaning
-The following steps are applied to the raw dataset:
+This project demonstrates how to gather weather data from a public source, preprocess it, analyze key patterns, classify daily weather conditions, and generate insightful visualizations.
 
-Conversion of temperature values to numeric format
-Removal of missing or invalid temperature entries
-Conversion of date strings to datetime objects
-Removal of rows with invalid dates
-This ensures the dataset is suitable for analysis.
+It’s ideal for developers and data enthusiasts who want a hands-on example of Python-driven **data engineering + analytics** workflows. :contentReference[oaicite:1]{index=1}
 
-📊 Data Analysis
-The project performs several statistical analyses:
+---
 
-Mean, minimum, and maximum temperature calculation
-Quartile analysis (25%, 50%, 75%)
-Rolling average calculation
-Anomaly detection using mean and standard deviation
-Anomalous values are classified as:
+## 🔍 Key Features
 
-High anomaly
-Low anomaly
-Normal
-🌤 Weather Classification
-Each day’s weather condition is classified using conditional logic based on temperature ranges:
+✅ **Web Scraping** – Collect weather data from a website using HTTP requests and HTML parsing. :contentReference[oaicite:2]{index=2}  
+✅ **Data Cleaning & Preparation** – Handle missing values, normalize formats, and clean dataset inconsistencies. :contentReference[oaicite:3]{index=3}  
+✅ **Statistical Insights** – Compute mean, min, max, quartiles, and rolling averages. :contentReference[oaicite:4]{index=4}  
+✅ **Anomaly Detection** – Detect unusually high or low temperatures. :contentReference[oaicite:5]{index=5}  
+✅ **Weather Classification** – Label daily conditions (Very Cold → Very Hot). :contentReference[oaicite:6]{index=6}  
+✅ **Visualizations** – Generate plots that visualize time series trends and distributions. :contentReference[oaicite:7]{index=7}
 
-Very Cold
-Cold
-Mild
-Hot
-Very Hot
-This provides a human-readable interpretation of numerical data.
+---
 
-📈 Visualization
-The program generates multiple plots:
+## 🔧 Technologies
 
-Scatter plot showing temperature changes over time
-Color-coded visualization of weather conditions
-Box plot displaying temperature distribution and outliers
-▶ How to Run the Project
+- Python 3.x  
+- `requests`, `BeautifulSoup` for web scraping  
+- `pandas` for data cleaning & analysis  
+- `matplotlib`, `seaborn` for plotting and visualization :contentReference[oaicite:8]{index=8}
 
-Follow the steps below to run the project on your local machine.
+---
 
-1️⃣ Clone the repository git clone https://github.com/Orkunbayraktar/CouncilWeatherDataAnalysis.git
+## 📦 Installation
 
-2️⃣ Navigate into the project folder cd CouncilWeatherDataAnalysis
+1. **Clone the Repo**
 
-3️⃣ Install required dependencies
+   ```bash
+   git clone https://github.com/Orkunbayraktar/CouncilWeatherDataAnalysis.git
+   cd CouncilWeatherDataAnalysis
 
-Make sure you have Python 3 installed, then run:
+2.  **Create a Virtual Environment (optional but recommended)**
+
+python -m venv venv
+source venv/bin/activate  # macOS/Linux
+venv\Scripts\activate     # Windows
+
+3.  **Install Dependencies**
 
 pip install -r requirements.txt
 
-4️⃣ Run the program
-
-The main entry point of the project is main.py, which is located in the root directory.
+4. **Run the Application**
 
 python main.py
+
+
+
+## ⚙️ What Happens Next?
+Once started, the program automatically:
+- Scrapes weather data from the source
+- Cleans and preprocesses the dataset
+- Performs statistical analysis and anomaly detection
+- Classifies daily weather conditions
+- Generates visualizations and outputs results
+
+
+## 📈 Expected Output
+
+After running the application, the user can expect the following outputs:
+
+### Console Output
+- Summary statistics such as **average, minimum, and maximum temperatures**
+- Detection of **anomalous temperature values**
+- Printed classification of daily weather conditions
+
+### Visual Output
+The program generates several plots to help interpret the data, including:
+- **Temperature trends over time**
+- **Distribution plots** showing temperature spread
+- **Box plots** highlighting outliers and anomalies
+
+These visualizations provide insights into seasonal patterns, temperature variability, and unusual weather behavior.
+
+
+## 📁 Project Structure
+.
+├── analysis.py         # Statistical analytics
+├── datacleaning.py     # Cleaning & formatting
+├── main.py             # Entry point
+├── visualization.py    # Plots & charts
+├── webscraping.py      # Data collection logic
+├── requirements.txt    # Dependencies
+├── README.md           # Project overview
+└── LICENSE             # MIT License
+
+
+## 📝 License
+
+This project is licensed under the MIT License.
+
+
+## 📬 Contact
+
+Created by Council Team — feel free to reach out or fork the repo ⭐.
+
+
+
+
+
+
+
+
