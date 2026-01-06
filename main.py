@@ -23,7 +23,7 @@ def create_mock_data():
     })
 
 def scrape_weather():
-    # Import the updated webscraping function
+    
     from webscraping import scrape_weather as ws_scrape_weather
     
     try:
@@ -68,7 +68,7 @@ def statistical_summary(df):
         print(f"Cities covered: {df['city'].nunique()}")
         print(f"Cities: {', '.join(df['city'].unique())}")
         
-        # Show statistics by city
+        
         print("\n--- Temperature Statistics by City ---")
         city_stats = df.groupby('city')['temperature'].agg(['mean', 'min', 'max', 'count'])
         print(city_stats.round(2))
@@ -123,11 +123,11 @@ def classify_weather(df):
 def visualize(df):
     sns.set_theme(style="whitegrid") 
 
-    # Temperature trend over time
+    
     plt.figure(figsize=(12, 6))
     if 'city' in df.columns:
-        # Plot separate lines for each city
-        for city in df['city'].unique()[:10]:  # Limit to first 10 cities for readability
+        
+        for city in df['city'].unique()[:10]:  
             city_data = df[df['city'] == city]
             plt.plot(pd.to_datetime(city_data["date"]), city_data["temperature"], 
                     marker='o', linestyle='-', label=city)
@@ -143,13 +143,13 @@ def visualize(df):
     plt.tight_layout()
     plt.show()
 
-    # Temperature distribution
+    
     plt.figure(figsize=(8, 5))
     sns.boxplot(y=df["temperature"], color='lightblue')
     plt.title("Temperature Distribution & Outliers")
     plt.show()
 
-    # City comparison if available
+    
     if 'city' in df.columns and df['city'].nunique() > 1:
         plt.figure(figsize=(10, 6))
         sns.boxplot(data=df, x="city", y="temperature")
@@ -158,7 +158,7 @@ def visualize(df):
         plt.tight_layout()
         plt.show()
 
-    # Anomalies scatter plot
+    
     if 'anomaly' in df.columns:
         plt.figure(figsize=(10, 6))
         sns.scatterplot(
@@ -175,7 +175,7 @@ def visualize(df):
         plt.tight_layout()
         plt.show()
     
-    # Weather condition distribution
+    
     if 'condition' in df.columns:
         plt.figure(figsize=(8, 5))
         sns.countplot(x="condition", data=df, order=["Very Cold", "Cold", "Mild", "Hot", "Very Hot"])
